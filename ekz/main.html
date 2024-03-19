@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKShop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+       header {
+    background-color: #6495ED;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add some space between logo and text */
+}
+
+header .logo img {
+    max-width: 100px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Align menu items in the center */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+		.foto {
+            width: 100px;
+            height: 200px;
+            border-radius: 6px;
+        }
+        .foto1 {
+            width: 200px;
+            height: 170px;
+            border-radius: 6px;
+        }
+        .href{
+        	color: #F0DC82;
+        	font-size: 22px;
+        }
+        .href1{
+        	color: #FFFFFF;
+        	font-size: 18px;
+        }
+        .recent-ads {
+            text-align: center;
+            padding: 0px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+        }
+
+        .recent-ads h2 {
+            color: #3498db;
+        }
+
+        .recent-ads .slider-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .slide {
+            width: 300px;
+            height: 400px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 10px;
+            background-color: #fff;
+        }
+
+        .slide img {
+            width: 60%;
+            height: 200px;
+            border-radius: 6px;
+        }
+
+        .details-button {
+            display: block;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .details-button:hover {
+            background-color: #2980b9;
+        }
+
+        .quick-search {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .quick-search input {
+            padding: 10px;
+            width: 60%;
+            box-sizing: border-box;
+        }
+
+        .quick-search button {
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 30%;
+            box-sizing: border-box;
+        }
+
+        .quick-search button:hover {
+            background-color: #2980b9;
+        }
+
+        .company-facts {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+        }
+
+        .animal-cards {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .animal-card {
+            width: 30%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .search-form {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .search-form form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .search-form label {
+            width: 45%;
+        }
+
+        .search-form input,
+        .search-form button {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        .reviews {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 650px;
+            border-radius: 8px;
+        }
+
+        .subscribe-form {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .subscribe-form form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .subscribe-form label {
+            width: 45%;
+        }
+
+        .subscribe-form input,
+        .subscribe-form button {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #505050;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        footer nav ul li {
+            margin: 0 10px;
+        }
+.buy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db; /* Blue color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.buy-button:hover {
+    background-color: #2980b9; /* Darker shade of blue on hover */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <H2 >BOOKShop</H2>
+            <img src="image\logo (2).png" alt="BOOKShop">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="href">Заказ</a></li>
+                <li><a href="#" class="href">Жанры</a></li>
+                <li><a href="#" class="href">Авторы</a></li>
+                <li><a href="#" class="href">Личный кабинет</a></li>
+                <li><a href="#" class="href">Отзывы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="recent-ads">
+        <h2>НОВИНКИ ЛИТЕРАТУРЫ</h2>
+        <div class="slider-container">
+    <div class="slide">
+        <img src="image\yp.jpg" alt="Кот" class="foto">
+        <h3>Упырь</h3>
+        <p>Алексей Толстой</p>
+        <p>Цена: 472 ₽</p>
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="slide">
+        <img src="image\zal.jpg" alt="Собака" class="foto">
+        <h3>Каллокаин</h3>
+        <p>Карин Бойе</p>
+        <p>Цена: 600 ₽</p>
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="slide">
+        <img src="image\gn.jpg" alt="Кот" class="foto">
+        <h3>В этих гнилых стенах</h3>
+        <p>Кристна Той</p>
+        <p>Цена: 600 ₽</p>
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="slide">
+        <img src="image\kal.png" alt="Собака" class="foto">
+        <h3>Заложник любви</h3>
+        <p>Наталия Антонова</p>
+        <p>Цена: 229 ₽</p>
+        <button class="buy-button">Купить</button>
+    </div>
+    <!-- Add more slides with similar structure -->
+</div>
+        
+    </section>
+
+    <section class="quick-search">
+        <input type="text" placeholder="Поиск книги">
+        <button>Поиск</button>
+    </section>
+
+<section class="recent-ads">
+	<h2>КНИЖНЫЕ ЦИКЛЫ</h2>
+
+<section class="animal-cards">
+    <div class="animal-card">
+        <img src="image\pr.png" alt="Кот" class="foto1">
+        <p>Андреа только что закончила колледж. Неопытная, но амбициозная, девушка мечтает стать редактором журнала «Нью-Йоркер». Неожиданно она получает работу в журнале моды «Подиум», который принадлежит одной из самых влиятельных женщин этой индустрии.</p>
+    </div>
+    <div class="animal-card">
+        <img src="image\zv.jpg" alt="Собака" class="foto1">
+        <p>На орбитальной станции под названием МОАГ живут дети. Они никогда не видели своих родителей, а их воспитанием и обучением занимаются специальные роботы. Когда детям исполняется пятнадцать лет, они бесследно исчезают.</p>
+    </div>
+    <div class="animal-card">
+        <img src="image\end.jpg" alt="Кролик" class="foto1">
+        <p>Эндрю Виггин – младший сын в религиозной семье. Он рождён для важной военной миссии – победы людей над «Жукерами». Сверстники постоянно унижают Эндрю, а родители и администрация школы не защищают маленького гения.</p>
+
+    </div>
+</section>
+</section>
+
+<section class="recent-ads">
+	<h2>Форма поиска</h2>
+    <section class="search-form">
+        <form>
+            <label for="district">Название:</label>
+            <input type="text" id="district" name="district">
+
+            <label for="animal-type">Жанр:</label>
+            <input type="text" id="animal-type" name="animal-type">
+
+            <button>Поиск</button>
+        </form>
+    </section>
+</section>
+
+<section class="recent-ads">
+	<h2>ЧИТАТЕЛИ О КНИГАХ</h2>
+<section class="reviews">
+    <div class="review-slide">
+        <h4>Имя автора: Анна</h4>
+        <img src="image\ava.jpg" alt="Фото животного" class="foto1">
+        <p>Отзыв: О боже, неужели и у нас в Росси появится эта прекрасная книга?! 😱
+Не могу поверить своему счастью!</p>
+        <p>Дата отзыва: 2024-03-05</p>
+    </div>
+    <div class="review-slide">
+        <h4>Имя автора: Иван</h4>
+        <img src="image\ava.jpg" alt="Фото животного" class="foto1">
+        <p>Отзыв: Эта книга действительно впечатлила меня своей оригинальностью и глубокими темами, которые она затрагивает.</p>
+        <p>Дата отзыва: 2024-03-04</p>
+    </div>
+    <div class="review-slide">
+        <h4>Имя автора: Елена</h4>
+        <img src="image\ava.jpg" alt="Фото животного" class="foto1">
+        <p>Отзыв: "Настоящий я" - это история, которая заставляет задуматься о глубоких аспектах человеческой сущности и жизни в целом.</p>
+        <p>Дата отзыва: 2024-03-03</p>
+    </div>
+    
+</section>
+</section>
+<section class="recent-ads">
+	<h2>Форма для подписки на новости сервиса</h2>
+
+    <section class="subscribe-form">
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label>
+                <input type="checkbox" name="agreement">
+                Согласен на обработку персональных данных
+            </label>
+
+            <button>Подписаться</button>
+        </form>
+    </section>
+</section>
+
+    <footer>
+        <p>Телефон: 8 (800)123-45-67</p>
+        <p>Email: zheny@newlife.ru</p>
+        <nav>
+            <ul>
+                <li><a href="#" class="href">Заказ</a></li>
+                <li><a href="#" class="href">Жанры</a></li>
+                <li><a href="#" class="href">Авторы</a></li>
+                <li><a href="#" class="href">Личный кабинет</a></li>
+                <li><a href="#" class="href">Отзывы</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var sliderContainer = document.querySelector('.slider-container');
+            var slides = document.querySelectorAll('.slide');
+            var totalSlides = slides.length;
+            var currentIndex = 0;
+
+            function showSlides() {
+                for (var i = 0; i < totalSlides; i++) {
+                    slides[i].style.display = 'none';
+                }
+
+                for (var i = currentIndex; i < currentIndex + 2; i++) {
+                    if (i < totalSlides) {
+                        slides[i].style.display = 'block';
+                    }
+                }
+
+                currentIndex += 2;
+
+                if (currentIndex >= totalSlides) {
+                    currentIndex = 0;
+                }
+
+                setTimeout(showSlides, 3000);
+            }
+
+            showSlides();
+
+            // Функция для переключения на предыдущие слайды
+            function prevSlide() {
+                currentIndex -= 4; // Переключаемся на два предыдущих слайда
+                if (currentIndex < 0) {
+                    currentIndex = totalSlides - 2; // Возвращаемся к последним двум слайдам
+                }
+                showSlides();
+            }
+
+            // Функция для переключения на следующие слайды
+            function nextSlide() {
+                showSlides();
+            }
+        });
+    </script>
+</body>
+</html>
